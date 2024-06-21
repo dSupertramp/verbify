@@ -1,0 +1,7 @@
+ENV
+
+.env
+embeddings/
+vectorstores/
+
+__pycache__

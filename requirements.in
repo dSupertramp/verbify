@@ -1,0 +1,11 @@
+llama-index
+llama-index-vector-stores-lancedb
+llama-index-llms-openai
+llama-index-llms-groq
+llama-index-llms-huggingface
+llama-index-embeddings-huggingface
+langchain
+python-dotenv
+requests
+nltk
+textblob
