@@ -5,13 +5,21 @@ setup(
     version="0.1.0",
     packages=find_packages(),
     install_requires=[
-        "nltk",
-        "textblob",
-        "transformers",
+        "llama-index"
+        "llama-index-vector-stores-lancedb"
+        "llama-index-llms-openai"
+        "llama-index-llms-groq"
+        "llama-index-llms-huggingface"
+        "llama-index-embeddings-huggingface"
+        "langchain"
+        "python-dotenv"
+        "requests"
+        "nltk"
+        "textblob"
     ],
     author="Danilo Palumbo",
     author_email="salvatoredanilopalumbo@gmail.com",
-    description="An NLP library integrating LLMs for advanced text processing.",
+    description="Power NLP with LLMs ",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/dsupertramp/verbify",
@@ -20,5 +28,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.10",
 )

@@ -1,5 +1,5 @@
 import os
-from config import config
+from ..config import config
 from llama_index.core import (
     Settings,
     StorageContext,
@@ -12,7 +12,7 @@ from llama_index.llms.groq import Groq
 from llama_index.vector_stores.lancedb import LanceDBVectorStore
 from .base_llm import BaseLLM
 from typing import Optional, Any
-from utils.generate_documents import generate_documents
+from ..utils.generate_documents import generate_documents
 
 
 class GroqLLM(BaseLLM):
@@ -34,7 +34,7 @@ class GroqLLM(BaseLLM):
         )
         embed_model = HuggingFaceEmbedding(
             model_name=config.DEFAULT_EMBEDDINGS,
-            cache_folder=f"embeddings/{config.DEFAULT_EMBEDDINGS.replace('/','_')}",
+            cache_folder=f"./rag/embeddings/{config.DEFAULT_EMBEDDINGS.replace('/','_')}",
         )
         documents = generate_documents(content=self.text)
         Settings.llm = llm
@@ -43,10 +43,10 @@ class GroqLLM(BaseLLM):
         Settings.chunk_overlap = config.CHUNK_OVERLAP
         Settings.context_window = config.CONTEXT_WINDOW
         Settings.num_output = config.NUM_OUTPUT
-        if os.path.exists("vectorstores/groq"):
-            vector_store = LanceDBVectorStore(uri="vectorstores/groq")
+        if os.path.exists("./rag/vectorstore/groq"):
+            vector_store = LanceDBVectorStore(uri="./rag/vectorstore/groq")
             storage_context = StorageContext.from_defaults(
-                vector_store=vector_store, persist_dir="vectorstores/groq"
+                vector_store=vector_store, persist_dir="./rag/vectorstore/groq"
             )
             index = load_index_from_storage(storage_context=storage_context)
             parser = SimpleNodeParser()
@@ -54,10 +54,10 @@ class GroqLLM(BaseLLM):
             index.insert_nodes(new_nodes)
             index = load_index_from_storage(storage_context=storage_context)
         else:
-            vector_store = LanceDBVectorStore(uri="vectorstores/groq")
+            vector_store = LanceDBVectorStore(uri="./rag/vectorstore/groq")
             storage_context = StorageContext.from_defaults(vector_store=vector_store)
             index = VectorStoreIndex(nodes=documents, storage_context=storage_context)
-            index.storage_context.persist(persist_dir="vectorstores/groq")
+            index.storage_context.persist(persist_dir="./rag/vectorstore/groq")
         self.index = index
 
     def query(self, query: str, output_parser: Optional[Any] = None) -> str:

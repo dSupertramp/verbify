@@ -1,5 +1,5 @@
-from llm.base_llm import BaseLLM
-from prompts.prompts import translate_prompt
+from ..llm.base_llm import BaseLLM
+from ..prompts.prompts import translate_prompt
 from llama_index.core.output_parsers import LangchainOutputParser
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 

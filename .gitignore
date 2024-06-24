@@ -5,3 +5,5 @@ embeddings/
 vectorstores/
 
 __pycache__
+
+rag/

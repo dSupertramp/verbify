@@ -4,7 +4,7 @@ from verbify.translation import translate
 from verbify.correction import correct
 from verbify.ner import ner
 from verbify.generation import contextual_text_generation
-from llm.groq import GroqLLM
+from verbify.llm.groq import GroqLLM
 from dotenv import load_dotenv
 import os
 

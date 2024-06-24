@@ -1,5 +1,5 @@
 from typing import List
-from config import config
+from ..config import config
 from llama_index.core import Document
 from llama_index.core.node_parser import SimpleNodeParser
 
