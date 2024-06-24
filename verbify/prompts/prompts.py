@@ -34,3 +34,17 @@ Expected output:
 contextual_text_generation_prompt = """
 Perform a comprehenesive context-aware generation of the given text, from a maximum of {max_length} characters.
 """
+
+
+classify_prompt = """
+Perform a comprehensive classification on the provided text.
+For text, provide up to 5 different labels.
+
+This is an example:
+
+Text:
+The latest iPhone model has many new features.
+
+Expected output:
+{"text": "The latest iPhone model has many new features.", "labels" : ["Technology"]},
+"""
