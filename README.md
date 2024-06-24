@@ -18,6 +18,7 @@ And so on
 ## 📦 Install
 
 First of all, create a virtual environment with the command `python3 -m venv venv_name` and activate it with `source venv_name\bin\activate`.
+
 After that, install the required libraries with `pip install -r requirements.in`
 
 ## 🔑 Set API Keys
