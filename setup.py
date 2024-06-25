@@ -19,7 +19,7 @@ setup(
     ],
     author="Danilo Palumbo",
     author_email="salvatoredanilopalumbo@gmail.com",
-    description="Power NLP with LLMs ",
+    description="Powered NLP with LLMs ",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/dsupertramp/verbify",
