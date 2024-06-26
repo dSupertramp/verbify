@@ -6,11 +6,12 @@ from verbify.ner import ner
 from verbify.generation import contextual_text_generation
 from verbify.classification import classify
 from verbify.llm.groq import GroqLLM
+from verbify.llm.openai import OpenAILLM
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
 text = "The latest iPhone model has many new features."
-llm = GroqLLM(api_key=os.getenv("GROQ_API_KEY"), text=text)
+llm = OpenAILLM(api_key=os.getenv("OPENAI_API_KEY"), text=text)
 print(classify(llm=llm))
