@@ -13,7 +13,4 @@ load_dotenv()
 
 text = "The latest iPhone model has many new features."
 llm = GroqLLM(api_key=os.getenv("GROQ_API_KEY"), text=text)
-# ner = ner(llm=llm)
-# generated_text = contextual_text_generation(llm=llm, max_length=50)
-label = classify(llm=llm)
-print(label)
+print(classify(llm=llm))
